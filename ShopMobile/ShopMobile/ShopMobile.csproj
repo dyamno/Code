@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{535848EA-1E5E-48E7-A171-C04D11C41499}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShopMobile</RootNamespace>
+    <AssemblyName>ShopMobile</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44325</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminAuthorizeAttribute.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KhachHangController.cs" />
+    <Compile Include="Controllers\QuanLySanPhamController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\ThongKeController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BINHLUAN.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHITIETDONDATHANG.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHITIETPHIEUNHAP.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHITIETSANPHAM.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DONDATHANG.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemGioHang.cs" />
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHUYENMAI.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOAISANPHAM.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOAITHANHVIEN.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOAITHANHVIEN_QUYEN.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Metdata\THANHVIEN.cs" />
+    <Compile Include="Models\NHACUNGCAP.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHASANXUAT.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PHIEUNHAP.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QUYEN.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SANPHAM.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShopMobileModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopMobileModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShopMobileModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShopMobileModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopMobileModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\THANHVIEN.cs">
+      <DependentUpon>ShopMobileModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Asset\css\bootstrap.css" />
+    <Content Include="Asset\css\creditly.css" />
+    <Content Include="Asset\css\easy-responsive-tabs.css" />
+    <Content Include="Asset\css\flexslider.css" />
+    <Content Include="Asset\css\font-awesome.css" />
+    <Content Include="Asset\css\jquery-ui1.css" />
+    <Content Include="Asset\css\popuo-box.css" />
+    <Content Include="Asset\css\style.css" />
+    <Content Include="Asset\css\style1.css" />
+    <Content Include="Asset\fonts\fontawesome-webfont.svg" />
+    <Content Include="Asset\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Asset\images\Banner\banner 1.png" />
+    <Content Include="Asset\images\Banner\banner 2.png" />
+    <Content Include="Asset\images\Banner\banner 3.png" />
+    <Content Include="Asset\images\Banner\banner 4.jpg" />
+    <Content Include="Asset\images\Banner\banner 5.jpg" />
+    <Content Include="Asset\images\Banner\banner 6.jpg" />
+    <Content Include="Asset\images\Banner\banner 7.jpg" />
+    <Content Include="Asset\images\Banner\banner 8.jpg" />
+    <Content Include="Asset\images\Banner\banner 9.jpg" />
+    <Content Include="Asset\images\Banner\banner1.jpg" />
+    <Content Include="Asset\images\Banner\banner2.jpg" />
+    <Content Include="Asset\images\Banner\banner3.jpg" />
+    <Content Include="Asset\images\Banner\banner4.jpg" />
+    <Content Include="Asset\images\Banner\banner5.jpg" />
+    <Content Include="Asset\images\Banner\bg.jpg" />
+    <Content Include="Asset\images\Banner\bg1.jpg" />
+    <Content Include="Asset\images\Banner\bg1.png" />
+    <Content Include="Asset\images\Banner\bg2.jpg" />
+    <Content Include="Asset\images\Icon\arrow.png" />
+    <Content Include="Asset\images\Icon\close_1.png" />
+    <Content Include="Asset\images\Icon\left.png" />
+    <Content Include="Asset\images\Icon\move-up.png" />
+    <Content Include="Asset\images\Icon\right.png" />
+    <Content Include="Asset\images\Icon\search.png" />
+    <Content Include="Asset\images\Icon\star1.png" />
+    <Content Include="Asset\images\Icon\star22.png" />
+    <Content Include="Asset\images\logo\1.png" />
+    <Content Include="Asset\images\logo\2.png" />
+    <Content Include="Asset\images\logo\contact2.jpg" />
+    <Content Include="Asset\images\logo\iPhone %28Apple%29.png" />
+    <Content Include="Asset\images\logo\Itel.jpg" />
+    <Content Include="Asset\images\logo\logo.jpg" />
+    <Content Include="Asset\images\logo\Masstel.png" />
+    <Content Include="Asset\images\logo\Mobell.jpg" />
+    <Content Include="Asset\images\logo\Nokia.jpg" />
+    <Content Include="Asset\images\logo\OPPO.jpg" />
+    <Content Include="Asset\images\logo\realme.png" />
+    <Content Include="Asset\images\logo\Samsung.png" />
+    <Content Include="Asset\images\logo\videoimg2.png" />
+    <Content Include="Asset\images\logo\vivo.png" />
+    <Content Include="Asset\images\logo\Xiaomi.png" />
+    <Content Include="Asset\images\Others\tab3.png" />
+    <Content Include="Asset\images\Pay\pay1.png" />
+    <Content Include="Asset\images\Pay\pay2.png" />
+    <Content Include="Asset\images\Pay\pay3.png" />
+    <Content Include="Asset\images\Pay\pay4.png" />
+    <Content Include="Asset\images\Pay\pay5.png" />
+    <Content Include="Asset\images\Pay\pay6.png" />
+    <Content Include="Asset\images\Pay\pay7.png" />
+    <Content Include="Asset\images\Pay\pay8.png" />
+    <Content Include="Asset\images\Pay\pay9.png" />
+    <Content Include="Asset\images\Pay\paypal.png" />
+    <Content Include="Asset\images\product\iPhone 11 64GB %281%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 11 64GB %282%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 11 64GB %283%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 11 64GB.jpg" />
+    <Content Include="Asset\images\product\iPhone 12 64GB %281%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 12 64GB %282%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 12 64GB %283%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 12 64GB.jpg" />
+    <Content Include="Asset\images\product\iPhone 13 128GB %281%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 13 128GB %282%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 13 128GB %283%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 13 128GB.jpg" />
+    <Content Include="Asset\images\product\iPhone 14 Pro Max 128GB %281%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 14 Pro Max 128GB %282%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 14 Pro Max 128GB %283%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 14 Pro Max 128GB.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 128GB %281%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 128GB %282%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 128GB %283%29.png" />
+    <Content Include="Asset\images\product\iPhone 15 128GB.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 Pro 128GB %281%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 Pro 128GB %282%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 Pro 128GB %283%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 Pro 128GB.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 Pro Max 1TB %281%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 Pro Max 1TB %282%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 Pro Max 1TB %283%29.jpg" />
+    <Content Include="Asset\images\product\iPhone 15 Pro Max 1TB.jpg" />
+    <Content Include="Asset\images\product\OPPO A78 %281%29.jpg" />
+    <Content Include="Asset\images\product\OPPO A78 %282%29.jpg" />
+    <Content Include="Asset\images\product\OPPO A78 %283%29.jpg" />
+    <Content Include="Asset\images\product\OPPO A78.jpg" />
+    <Content Include="Asset\images\product\OPPO Find N2 Flip 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Find N2 Flip 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Find N2 Flip 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Find N2 Flip 5G.jpg" />
+    <Content Include="Asset\images\product\OPPO Find X5 Pro 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Find X5 Pro 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Find X5 Pro 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Find X5 Pro 5G.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno10 5G 128GB %281%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno10 5G 128GB %282%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno10 5G 128GB %283%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno10 5G 128GB.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno10 Pro+ 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno10 Pro+ 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno10 Pro+ 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno10 Pro 5G.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno7 Z 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno7 Z 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno7 Z 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno7 Z 5G.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno8 T 5G 256GB %281%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno8 T 5G 256GB %282%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno8 T 5G 256GB %283%29.jpg" />
+    <Content Include="Asset\images\product\OPPO Reno8 T 5G 256GB.jpg" />
+    <Content Include="Asset\images\product\realme 11 Pro  5G.jpg" />
+    <Content Include="Asset\images\product\realme 11 Pro 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\realme 11 Pro 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\realme 11 Pro 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\realme C30s %283GB_64GB%29 %281%29.jpg" />
+    <Content Include="Asset\images\product\realme C30s %283GB_64GB%29 %282%29.jpg" />
+    <Content Include="Asset\images\product\realme C30s %283GB_64GB%29 %283%29.jpg" />
+    <Content Include="Asset\images\product\realme C30s %283GB_64GB%29.jpg" />
+    <Content Include="Asset\images\product\realme C51 64GB %281%29.jpg" />
+    <Content Include="Asset\images\product\realme C51 64GB %282%29.jpg" />
+    <Content Include="Asset\images\product\realme C51 64GB %283%29.jpg" />
+    <Content Include="Asset\images\product\realme C51 64GB.jpg" />
+    <Content Include="Asset\images\product\realme C53 %281%29.jpg" />
+    <Content Include="Asset\images\product\realme C53 %282%29.jpg" />
+    <Content Include="Asset\images\product\realme C53 %283%29.jpg" />
+    <Content Include="Asset\images\product\realme C53.jpg" />
+    <Content Include="Asset\images\product\realme C55 6GB %281%29.jpg" />
+    <Content Include="Asset\images\product\realme C55 6GB %282%29.jpg" />
+    <Content Include="Asset\images\product\realme C55 6GB %283%29.jpg" />
+    <Content Include="Asset\images\product\realme C55 6GB.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S22 Ultra 5G 128GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S22 Ultra 5G 128GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S22 Ultra 5G 128GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S22 Ultra 5G 128GB.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 5G 128GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 5G 128GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 5G 128GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 5G 128GB.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 FE 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 FE 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 FE 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 FE 5G.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 Ultra 5G 256GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 Ultra 5G 256GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 Ultra 5G 256GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy S23 Ultra 5G 256GB.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Flip4 5G 128GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Flip4 5G 128GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Flip4 5G 128GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Flip4 5G 128GB.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Flip5 5G 256GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Flip5 5G 256GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Flip5 5G 256GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Flip5 5G 256GB.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Fold4 5G 256GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Fold4 5G 256GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Fold4 5G 256GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Fold4 5G 256GB.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Fold5 5G 256GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Fold5 5G 256GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Fold5 5G 256GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Samsung Galaxy Z Fold5 5G 256GB.jpg" />
+    <Content Include="Asset\images\product\vivo V25 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\vivo V25 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\vivo V25 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\vivo V25 5G.jpg" />
+    <Content Include="Asset\images\product\vivo V25 Pro 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\vivo V25 Pro 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\vivo V25 Pro 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\vivo V25 Pro 5G.jpg" />
+    <Content Include="Asset\images\product\vivo V27e %281%29.jpg" />
+    <Content Include="Asset\images\product\vivo V27e %282%29.jpg" />
+    <Content Include="Asset\images\product\vivo V27e %283%29.jpg" />
+    <Content Include="Asset\images\product\vivo V27e.jpg" />
+    <Content Include="Asset\images\product\vivo Y02T %281%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y02T %282%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y02T %283%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y02T.jpg" />
+    <Content Include="Asset\images\product\Vivo Y17s 4GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Vivo Y17s 4GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Vivo Y17s 4GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Vivo Y17s 4GB.jpg" />
+    <Content Include="Asset\images\product\vivo Y22s 4GB %281%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y22s 4GB %282%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y22s 4GB %283%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y22s 4GB.jpg" />
+    <Content Include="Asset\images\product\vivo Y35 %281%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y35 %282%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y35 %283%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y35.jpg" />
+    <Content Include="Asset\images\product\vivo Y36 128GB %281%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y36 128GB %282%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y36 128GB %283%29.jpg" />
+    <Content Include="Asset\images\product\vivo Y36 128GB.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 12 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 12 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 12 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 12 5G.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 13 Lite 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 13 Lite 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 13 Lite 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 13 Lite 5G.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 13T 5G 12GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 13T 5G 12GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 13T 5G 12GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi 13T 5G 12GB.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi 12 4GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi 12 4GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi 12 4GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi 12 4GB.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi 12C 64GB %281%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi 12C 64GB %282%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi 12C 64GB %283%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi 12C 64GB.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi Note 12 %288GB_256GB%29 %281%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi Note 12 %288GB_256GB%29 %282%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi Note 12 %288GB_256GB%29 %283%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi Note 12 %288GB_256GB%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi Note 12 Pro 5G %281%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi Note 12 Pro 5G %282%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi Note 12 Pro 5G %283%29.jpg" />
+    <Content Include="Asset\images\product\Xiaomi Redmi Note 12 Pro 5G.jpg" />
+    <Content Include="Asset\js\bootstrap.js" />
+    <Content Include="Asset\js\creditly.js" />
+    <Content Include="Asset\js\easing.js" />
+    <Content Include="Asset\js\easyResponsiveTabs.js" />
+    <Content Include="Asset\js\fontawesome.js" />
+    <Content Include="Asset\js\imagezoom.js" />
+    <Content Include="Asset\js\jquery-2.1.4.min.js" />
+    <Content Include="Asset\js\jquery-ui.js" />
+    <Content Include="Asset\js\jquery.flexisel.js" />
+    <Content Include="Asset\js\jquery.flexslider.js" />
+    <Content Include="Asset\js\jquery.magnific-popup.js" />
+    <Content Include="Asset\js\minicart.js" />
+    <Content Include="Asset\js\move-top.js" />
+    <Content Include="Asset\js\SmoothScroll.min.js" />
+    <Content Include="Content\AdminLayout\css\bootstrap.css" />
+    <Content Include="Content\AdminLayout\css\clndr.css" />
+    <Content Include="Content\AdminLayout\css\jqvmap.css" />
+    <Content Include="Content\AdminLayout\css\nav.css" />
+    <Content Include="Content\AdminLayout\css\style.css" />
+    <Content Include="Content\AdminLayout\images\ar2.png" />
+    <Content Include="Content\AdminLayout\images\arrows.png" />
+    <Content Include="Content\AdminLayout\images\avatar.jpg" />
+    <Content Include="Content\AdminLayout\images\avatar1.jpg" />
+    <Content Include="Content\AdminLayout\images\avatar2.jpg" />
+    <Content Include="Content\AdminLayout\images\img-sprite.png" />
+    <Content Include="Content\AdminLayout\images\into.png" />
+    <Content Include="Content\AdminLayout\images\into1.png" />
+    <Content Include="Content\AdminLayout\images\logo.png" />
+    <Content Include="Content\AdminLayout\images\pp.jpg" />
+    <Content Include="Content\AdminLayout\images\pp0.jpg" />
+    <Content Include="Content\AdminLayout\images\pp01.jpg" />
+    <Content Include="Content\AdminLayout\images\settings.png" />
+    <Content Include="Content\AdminLayout\images\tick-mark.png" />
+    <Content Include="Content\AdminLayout\index.html" />
+    <Content Include="Content\AdminLayout\js\Chart1.js" />
+    <Content Include="Content\AdminLayout\js\clndr.js" />
+    <Content Include="Content\AdminLayout\js\easyResponsiveTabs.js" />
+    <Content Include="Content\AdminLayout\js\jquery.easydropdown.js" />
+    <Content Include="Content\AdminLayout\js\jquery.min.js" />
+    <Content Include="Content\AdminLayout\js\jquery.nicescroll.js" />
+    <Content Include="Content\AdminLayout\js\jquery.vmap.js" />
+    <Content Include="Content\AdminLayout\js\jquery.vmap.sampledata.js" />
+    <Content Include="Content\AdminLayout\js\jquery.vmap.world.js" />
+    <Content Include="Content\AdminLayout\js\main.js" />
+    <Content Include="Content\AdminLayout\js\moment-2.2.1.js" />
+    <Content Include="Content\AdminLayout\js\site.js" />
+    <Content Include="Content\AdminLayout\js\underscore-min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CssFont\css\font-awesome.css" />
+    <Content Include="Content\CssFont\css\font-awesome.min.css" />
+    <Content Include="Content\CssFont\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\ShopMobileModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShopMobileModel.edmx</DependentUpon>
+      <LastGenOutput>ShopMobileModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ShopMobileModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShopMobileModel.edmx</DependentUpon>
+      <LastGenOutput>ShopMobileModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Asset\fonts\fontawesome-webfont.eot" />
+    <Content Include="Asset\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Asset\fonts\fontawesome-webfont.woff" />
+    <Content Include="Asset\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Asset\fonts\FontAwesome.otf" />
+    <Content Include="Asset\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Asset\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Asset\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Asset\fonts\glyphicons-halflings-regular.woff2" />
+    <EntityDeploy Include="Models\ShopMobileModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShopMobileModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ShopMobileModel.edmx.diagram">
+      <DependentUpon>ShopMobileModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\CssFont\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\CssFont\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\CssFont\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\CssFont\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\CssFont\fonts\FontAwesome.otf" />
+    <Content Include="Content\CssFont\less\animated.less" />
+    <Content Include="Content\CssFont\less\bordered-pulled.less" />
+    <Content Include="Content\CssFont\less\core.less" />
+    <Content Include="Content\CssFont\less\fixed-width.less" />
+    <Content Include="Content\CssFont\less\font-awesome.less" />
+    <Content Include="Content\CssFont\less\icons.less" />
+    <Content Include="Content\CssFont\less\larger.less" />
+    <Content Include="Content\CssFont\less\list.less" />
+    <Content Include="Content\CssFont\less\mixins.less" />
+    <Content Include="Content\CssFont\less\path.less" />
+    <Content Include="Content\CssFont\less\rotated-flipped.less" />
+    <Content Include="Content\CssFont\less\screen-reader.less" />
+    <Content Include="Content\CssFont\less\stacked.less" />
+    <Content Include="Content\CssFont\less\variables.less" />
+    <Content Include="Content\CssFont\scss\font-awesome.scss" />
+    <Content Include="Content\CssFont\scss\_animated.scss" />
+    <Content Include="Content\CssFont\scss\_bordered-pulled.scss" />
+    <Content Include="Content\CssFont\scss\_core.scss" />
+    <Content Include="Content\CssFont\scss\_fixed-width.scss" />
+    <Content Include="Content\CssFont\scss\_icons.scss" />
+    <Content Include="Content\CssFont\scss\_larger.scss" />
+    <Content Include="Content\CssFont\scss\_list.scss" />
+    <Content Include="Content\CssFont\scss\_mixins.scss" />
+    <Content Include="Content\CssFont\scss\_path.scss" />
+    <Content Include="Content\CssFont\scss\_rotated-flipped.scss" />
+    <Content Include="Content\CssFont\scss\_screen-reader.scss" />
+    <Content Include="Content\CssFont\scss\_stacked.scss" />
+    <Content Include="Content\CssFont\scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Shop\Details.cshtml" />
+    <Content Include="Views\KhachHang\SortDuLieu.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Shop\SanPhamPartial.cshtml" />
+    <Content Include="Views\Home\IphonePartial.cshtml" />
+    <Content Include="Views\Home\SamSungPartial.cshtml" />
+    <Content Include="Views\Home\OPPOPartial.cshtml" />
+    <Content Include="Views\Shop\SanPhamLienQuanPartial.cshtml" />
+    <Content Include="Views\Shop\SanPham.cshtml" />
+    <Content Include="Views\Home\MenuPartial.cshtml" />
+    <Content Include="Views\Home\DangKy.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\XemGioHang.cshtml" />
+    <Content Include="Views\GioHang\ThongBao.cshtml" />
+    <Content Include="Views\GioHang\SuaGioHang.cshtml" />
+    <Content Include="Views\TimKiem\KQTimKiem.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\QuanLySanPham\TaoMoi.cshtml" />
+    <Content Include="Views\QuanLySanPham\ChinhSua.cshtml" />
+    <Content Include="Views\QuanLySanPham\Index.cshtml" />
+    <Content Include="Views\QuanLySanPham\Xoa.cshtml" />
+    <Content Include="Views\ThongKe\Index.cshtml" />
+    <Content Include="Views\KhachHang\Index.cshtml" />
+    <Content Include="Views\Home\LoiPhanQuyen.cshtml" />
+    <Content Include="Views\Home\Error404.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminAuthorizeAttribute\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Accessibility">
+      <Guid>{1EA4DBF0-3C3B-11CF-810C-00AA00389B71}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50531</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44325/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
